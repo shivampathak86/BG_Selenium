@@ -11,15 +11,16 @@ namespace BG.Selenium.Test
         public void Initialize()
         {
             Driver.Initialize();
+            
         }
 
 
         [TestMethod]
         public void Can_User_login()
         {
-            LoginPage.Goto();//Open the Url
 
-           
+
+            LoginPage.Goto();//Open the Url
 
             Assert.IsTrue(LoginPage.Login("775701@bxgcorp.com", "hut44#").IsUserLoggedIn(), "Unable to Login"); // Assert User is logged in
               
@@ -27,7 +28,7 @@ namespace BG.Selenium.Test
         }
 
         [TestCleanup]
-        public void CleanUp()
+        public void cleanUp()
         {
             Driver.CleanUp();
 

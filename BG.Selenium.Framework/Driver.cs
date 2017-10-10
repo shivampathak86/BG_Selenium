@@ -12,8 +12,9 @@ namespace BG.Selenium.Framework
         {
             var driverService = FirefoxDriverService.CreateDefaultService(@"C:\drivers");
             instance = new FirefoxDriver(driverService);
-         
-          
+
+
+           
         }
        
         public static void CleanUp()

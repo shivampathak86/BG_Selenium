@@ -12,9 +12,9 @@ namespace BG.Selenium.Framework
 {
     public class LoginPage
     {
-        public LoginPage()
+        public LoginPage(IWebDriver driver)
         {
-            PageFactory.InitElements(Driver.instance, new LoginPage());
+            PageFactory.InitElements(driver, this);
 
         }
 
@@ -34,7 +34,7 @@ namespace BG.Selenium.Framework
             Driver.instance.Navigate().GoToUrl("https://sc.bluegreenowner.com/");
            
           
-            return new LoginPage();
+            return new LoginPage(Driver.instance);
 
         }
 
@@ -48,11 +48,12 @@ namespace BG.Selenium.Framework
 
             //var btn = Driver.instance.FindElement(By.Id("btnSubmit"));
             //btn.Click();
-            
+            LoginPage login = new LoginPage(Driver.instance); 
+
             Username.SendKeys(username);
             Password.SendKeys(password);
             SubmitBtn.Click();
-            return new LoginPage(); ;
+            return new LoginPage(Driver.instance); 
 
         }
 
