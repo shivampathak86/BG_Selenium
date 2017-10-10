@@ -5,7 +5,7 @@ using BG.Selenium.Framework;
 namespace BG.Selenium.Test
 {
     [TestClass]
-    public class loginTest
+    public class LoginTest
     {
         [TestInitialize]
         public void Initialize()
@@ -28,7 +28,7 @@ namespace BG.Selenium.Test
         }
 
         [TestCleanup]
-        public void cleanUp()
+        public void CleanUp()
         {
             Driver.CleanUp();
 
