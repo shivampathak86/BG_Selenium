@@ -12,33 +12,29 @@ namespace BG.Selenium.Framework
 {
     public class LoginPage
     {
-        public LoginPage(IWebDriver driver)
-        {
-            PageFactory.InitElements(driver, this);
-
-        }
-
+        
+ 
         [FindsBy(How = How.Id, Using = "txtEmail")]
-        public static IWebElement Username;
+        public  IWebElement Username;
 
 
         [FindsBy(How = How.Id, Using = "txtPassword")]
-        public static IWebElement Password;
+        public  IWebElement Password;
 
         [FindsBy(How = How.Id, Using = "btnSubmit")]
-        public static IWebElement SubmitBtn;
+        public  IWebElement SubmitBtn;
 
         
         public static LoginPage Goto()
         {
-            Driver.instance.Navigate().GoToUrl("https://sc.bluegreenowner.com/");
+            Driver.DriverInstance.Navigate().GoToUrl("https://sc.bluegreenowner.com/");
            
           
-            return new LoginPage(Driver.instance);
+            return new LoginPage();
 
         }
 
-        public static LoginPage Login(string username, string password)
+        public LoginPage Login(string username, string password)
         {
             //var UserName = Driver.instance.FindElement(By.Id("txtEmail"));
             //UserName.SendKeys(username);
@@ -48,28 +44,21 @@ namespace BG.Selenium.Framework
 
             //var btn = Driver.instance.FindElement(By.Id("btnSubmit"));
             //btn.Click();
-            LoginPage login = new LoginPage(Driver.instance); 
 
             Username.SendKeys(username);
             Password.SendKeys(password);
             SubmitBtn.Click();
-            return new LoginPage(Driver.instance); 
+            return this; 
 
         }
 
         public bool IsUserLoggedIn()
-        { 
-            
-            var myBluegreen = Driver.instance.FindElement(By.LinkText("my bluegreen"));
+        {
+         
+            var myBluegreen = new WebDriverWait(Driver.DriverInstance, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.ElementExists(By.LinkText("my bluegreen")));
 
-            WebDriverWait waitFormyBluegreen = new WebDriverWait(Driver.instance, TimeSpan.FromSeconds(10));
-
-            return waitFormyBluegreen.Until(wait => myBluegreen.Enabled);
-
-          
+            return myBluegreen.Displayed;
            
-           
-
         }
 
     }

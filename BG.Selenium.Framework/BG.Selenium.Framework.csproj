@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="LoginPage.cs" />
     <Compile Include="Driver.cs" />
+    <Compile Include="Pages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -20,11 +20,11 @@ namespace BG.Selenium.Test
         {
 
 
-            LoginPage.Goto();//Open the Url
+           LoginPage.Goto();//Open the Url
 
-            Assert.IsTrue(LoginPage.Login("775701@bxgcorp.com", "hut44#").IsUserLoggedIn(), "Unable to Login"); // Assert User is logged in
+            Assert.IsTrue(Pages.Loginpage.Login("775701@bxgcorp.com", "hut44#").IsUserLoggedIn(), "Unable to Login"); // Assert User is logged in
               
-
+            
         }
 
         [TestCleanup]
