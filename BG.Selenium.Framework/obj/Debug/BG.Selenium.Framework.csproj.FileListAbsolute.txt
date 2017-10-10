@@ -8,3 +8,13 @@ C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\TestProject.BG.Selenium\BG
 C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\TestProject.BG.Selenium\BG.Selenium.Framework\obj\Debug\BG.Selenium.Framework.csproj.CoreCompileInputs.cache
 C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\TestProject.BG.Selenium\BG.Selenium.Framework\obj\Debug\BG.Selenium.Framework.dll
 C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\TestProject.BG.Selenium\BG.Selenium.Framework\obj\Debug\BG.Selenium.Framework.pdb
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\bin\Debug\BG.Selenium.Framework.dll
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\bin\Debug\BG.Selenium.Framework.pdb
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\bin\Debug\WebDriver.dll
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\bin\Debug\WebDriver.Support.dll
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\bin\Debug\WebDriver.xml
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\bin\Debug\WebDriver.Support.xml
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\obj\Debug\BG.Selenium.Framework.csprojResolveAssemblyReference.cache
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\obj\Debug\BG.Selenium.Framework.csproj.CoreCompileInputs.cache
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\obj\Debug\BG.Selenium.Framework.dll
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\obj\Debug\BG.Selenium.Framework.pdb
