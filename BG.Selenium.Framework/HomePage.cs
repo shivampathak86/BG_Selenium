@@ -14,6 +14,12 @@ namespace BG.Selenium.Framework
         [FindsBy(How = How.Id, Using ="searchOptions_searchParameters_ReservationType")]
         public static IWebElement PoinTypeRadioButton { get; set; }
 
+        [FindsBy(How=How.Id, Using ="Destination")]
+        public static By AllDestinationLocator { get; set; }
+        public static Iwe
+       
+         
+
         public static HomePage SelectPointype()
         {
             var pointRadiobtn = PoinTypeRadioButton;
