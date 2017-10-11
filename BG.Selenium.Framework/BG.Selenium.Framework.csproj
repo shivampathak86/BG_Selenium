@@ -49,6 +49,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapturingAction.cs" />
+    <Compile Include="HomePage.cs" />
     <Compile Include="LoginPage.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Pages.cs" />

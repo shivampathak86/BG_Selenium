@@ -21,5 +21,17 @@ namespace BG.Selenium.Framework
             }
         }
 
+        public static object Bookreservation
+        {
+            get
+            {
+                var bookreservation = new HomePage();
+                PageFactory.InitElements(Driver.DriverInstance, bookreservation);
+                return bookreservation;
+            }
+
+
+
+        }
     }
 }

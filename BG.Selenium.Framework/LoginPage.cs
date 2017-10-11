@@ -52,15 +52,20 @@ namespace BG.Selenium.Framework
 
         }
 
-        public bool IsUserLoggedIn()
+        public bool IsUserLoggedIn
         {
-         
-            var myBluegreen = new WebDriverWait(Driver.DriverInstance, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.ElementExists(By.LinkText("my bluegreen")));
+            get
+            {
 
-            return myBluegreen.Displayed;
-           
+                var myBluegreen = new WebDriverWait(Driver.DriverInstance, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.ElementExists(By.LinkText("my bluegreen")));
+
+                CapturingAction.CaptureElement(myBluegreen);
+
+                return myBluegreen.Displayed;
+
+            }
         }
-
     }
-
+    
+    
 }
