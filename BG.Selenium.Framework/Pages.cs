@@ -21,7 +21,7 @@ namespace BG.Selenium.Framework
             }
         }
 
-        public static object Bookreservation
+        public static HomePage Bookreservation
         {
             get
             {

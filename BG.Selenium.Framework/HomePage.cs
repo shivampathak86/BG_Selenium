@@ -1,4 +1,7 @@
-﻿using System.Configuration;
+﻿using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -12,24 +15,38 @@ namespace BG.Selenium.Framework
         }
 
         [FindsBy(How = How.Id, Using ="searchOptions_searchParameters_ReservationType")]
-        public static IWebElement PoinTypeRadioButton { get; set; }
+        public IWebElement PoinTypeRadioButton;
 
         [FindsBy(How=How.Id, Using ="Destination")]
-        public static By AllDestinationLocator { get; set; }
-        public static Iwe
-       
-         
+          
+        public  IWebElement selectedDestination { get; set; }
 
-        public static HomePage SelectPointype()
+
+
+
+        public  HomePage SelectPointype()
         {
-            var pointRadiobtn = PoinTypeRadioButton;
-            if (!(pointRadiobtn.Selected))
+            if (PoinTypeRadioButton != null)
             {
+                var pointRadiobtn = PoinTypeRadioButton;
+                CapturingAction.CaptureElement(PoinTypeRadioButton);
+
+                if (!(pointRadiobtn.Selected))
+                {
               
-                pointRadiobtn.Click();
+                    pointRadiobtn.Click();
+                }
             }
-            return new HomePage();
+            return this;
         }
 
+        public HomePage SelectDestination()
+        {
+            var selectdestination = new SelectElement(selectedDestination);
+            selectdestination.SelectByText("Peoria");
+            CapturingAction.CaptureElement(selectedDestination);
+
+             return this;
+        }
     }
 }

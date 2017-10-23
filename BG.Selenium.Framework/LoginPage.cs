@@ -24,7 +24,8 @@ namespace BG.Selenium.Framework
         [FindsBy(How = How.Id, Using = "btnSubmit")]
         public  IWebElement SubmitBtn;
 
-        
+ 
+
         public static LoginPage Goto()
         {
             Driver.DriverInstance.Navigate().GoToUrl("https://sc.bluegreenowner.com/");
@@ -63,6 +64,27 @@ namespace BG.Selenium.Framework
 
                 return myBluegreen.Displayed;
 
+            }
+        }
+
+        public  void WithVacationClub()
+        {
+            var vacClubRadiobtn = new WebDriverWait(Driver.DriverInstance, TimeSpan.FromSeconds(10)).Until(
+                ExpectedConditions.ElementToBeClickable(By.Id("rdoAccountList_0")));
+            
+
+            if (vacClubRadiobtn != null)
+
+            {
+                ;
+
+
+                if (!(vacClubRadiobtn.Selected))
+                {
+                   CapturingAction.CaptureElement(vacClubRadiobtn);
+                    vacClubRadiobtn.Click();
+                }
+                
             }
         }
     }
