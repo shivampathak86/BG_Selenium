@@ -76,9 +76,7 @@ namespace BG.Selenium.Framework
             if (vacClubRadiobtn != null)
 
             {
-                ;
-
-
+                
                 if (!(vacClubRadiobtn.Selected))
                 {
                    CapturingAction.CaptureElement(vacClubRadiobtn);

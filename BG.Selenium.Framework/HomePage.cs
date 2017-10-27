@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
 
 namespace BG.Selenium.Framework
 {
@@ -18,8 +21,13 @@ namespace BG.Selenium.Framework
         public IWebElement PoinTypeRadioButton;
 
         [FindsBy(How=How.Id, Using ="Destination")]
-          
         public  IWebElement selectedDestination { get; set; }
+
+        [FindsBy(How =How.Id, Using="CheckInDate")]
+        public IWebElement checkInDate { get; set; }
+
+        [FindsBy(How = How.Id, Using ="CheckOutDate")]
+        public IWebElement checkOutDate { get; set; }
 
 
 
@@ -46,7 +54,60 @@ namespace BG.Selenium.Framework
             selectdestination.SelectByText("Peoria");
             CapturingAction.CaptureElement(selectedDestination);
 
-             return this;
+            return this;
         }
+
+        public HomePage CheckinDate(String checkindate)
+        {
+            SelectDate(checkInDate,checkindate);
+            return this;
+        }
+
+        public HomePage CheckOutDate(string checkoutdate)
+        {
+            SelectDate(checkOutDate,checkoutdate);
+            return this;
+        }
+
+        //selecting dates 
+        protected void SelectDate( IWebElement DateElement, string date)
+        {
+
+            var CheckInDate = DateElement;//By.Id("CheckInDate"));
+            if (CheckInDate.Displayed)
+            {
+                CheckInDate.Click();
+                IWebElement GetCalendarPicker =
+                    new WebDriverWait(Driver.DriverInstance, TimeSpan.FromSeconds(5)).Until(
+                        ExpectedConditions.ElementIsVisible(By.ClassName("ui-datepicker-calendar")));
+
+
+                IList<IWebElement> GetCalenderRows = GetCalendarPicker.FindElements(By.TagName("tr"));
+
+                if (GetCalenderRows == null) throw new ArgumentNullException(nameof(GetCalenderRows));
+
+                else if (GetCalenderRows != null)
+                {
+                    int DatePicketRownumber = GetCalenderRows.Count;
+                    foreach (IWebElement CalenderRows in GetCalenderRows)
+
+                    {
+                        IList<IWebElement> GetCalenderColumn = CalenderRows.FindElements(By.TagName("td"));
+                        if (GetCalenderColumn != null)
+                        {
+                            foreach (IWebElement CalendarColumns in GetCalenderColumn)
+                            {
+                                if(CalendarColumns.Text.ToUpper().Equals(date))
+                                    CalendarColumns.Click();
+                            }
+                        }
+
+                    }
+                }
+            }
+            
+        }
+
+
     }
 }

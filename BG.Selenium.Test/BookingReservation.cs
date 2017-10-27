@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace BG.Selenium.Test
 {
     [TestClass]
-    public class BookingReservat
+    public class BookingReservation
     {
         [TestInitialize]
         public void Initialize()
@@ -24,8 +24,15 @@ namespace BG.Selenium.Test
             LoginPage.Goto();
             Pages.Loginpage.Login("775699@bxgcorp.com","hut44#");
             
-            Pages.Loginpage.WithVacationClub();
-            Pages.Bookreservation.SelectPointype().SelectDestination(); //;.EnterDates().ClickOnSearch();
+            Pages.Loginpage.WithVacationClub();// Login with ownerType
+
+            
+             /* Select PointType 
+             * Select Destination
+             * Select Check in Date
+             * Select Check Out Date
+             */
+            Pages.Bookreservation.SelectPointype().SelectDestination().CheckinDate("2").CheckOutDate("4");
 
         }
 
