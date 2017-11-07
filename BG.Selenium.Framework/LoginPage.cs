@@ -69,8 +69,8 @@ namespace BG.Selenium.Framework
 
         public  void WithVacationClub()
         {
-            var vacClubRadiobtn = new WebDriverWait(Driver.DriverInstance, TimeSpan.FromSeconds(10)).Until(
-                ExpectedConditions.ElementToBeClickable(By.Id("rdoAccountList_0")));
+            var vacClubRadiobtn = new WebDriverWait(Driver.DriverInstance, TimeSpan.FromSeconds(20)).Until(
+                ExpectedConditions.ElementIsVisible(By.Id("rdoAccountList_0")));
             
 
             if (vacClubRadiobtn != null)

@@ -29,6 +29,8 @@ namespace BG.Selenium.Framework
         [FindsBy(How = How.Id, Using ="CheckOutDate")]
         public IWebElement checkOutDate { get; set; }
 
+        [FindsBy(How = How.Name, Using = "btnSubmit")]
+        public IWebElement SearchInventoryBtn { get; set; }
 
 
 
@@ -56,20 +58,21 @@ namespace BG.Selenium.Framework
 
             return this;
         }
-
+        // Checkin date
         public HomePage CheckinDate(String checkindate)
         {
             SelectDate(checkInDate,checkindate);
             return this;
         }
 
+        // Checkout date
         public HomePage CheckOutDate(string checkoutdate)
         {
             SelectDate(checkOutDate,checkoutdate);
             return this;
         }
 
-        //selecting dates 
+        //selecting dates generic method
         protected void SelectDate( IWebElement DateElement, string date)
         {
 
@@ -108,6 +111,12 @@ namespace BG.Selenium.Framework
             
         }
 
+
+        public SearchResultPage ClickOnSearchButton()
+        {
+            SearchInventoryBtn.Click();
+            return  new SearchResultPage();
+        }
 
     }
 }

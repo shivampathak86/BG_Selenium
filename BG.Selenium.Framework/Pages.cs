@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace BG.Selenium.Framework
 {
-    public  class Pages
-    {  
-        
+    public class Pages
+    {
+
         public static LoginPage Loginpage
         {
 
             get
             {
-               var loginPage = new LoginPage();
+                var loginPage = new LoginPage();
                 PageFactory.InitElements(Driver.DriverInstance, loginPage);
                 return loginPage;
             }
@@ -29,9 +29,20 @@ namespace BG.Selenium.Framework
                 PageFactory.InitElements(Driver.DriverInstance, bookreservation);
                 return bookreservation;
             }
-
-
-
         }
+
+        public static SearchResultPage ResultPage
+            {
+                get
+
+                {
+                    var resultPage = new SearchResultPage();
+                    PageFactory.InitElements(Driver.DriverInstance, resultPage);
+                    return resultPage;
+                }
+            }
+
+
+        
     }
 }
