@@ -11,11 +11,10 @@ namespace BG.Selenium.Framework
     {
         public static void  Screenshot()
         {
-            
-            
+           
                var screenshot = ((ITakesScreenshot)Driver.DriverInstance).GetScreenshot();
                 screenshot.SaveAsFile(@"C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Framework\Screenshots\SS_"+ DateTime.Now.ToString("yy-MM-dd") +".jpg", ScreenshotImageFormat.Jpeg);
-                ;
+                
            
         }
         public static void CaptureElement(IWebElement element)

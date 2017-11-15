@@ -52,10 +52,15 @@
   <ItemGroup>
     <Compile Include="BookingReservation.cs" />
     <Compile Include="LoginTest.cs" />
+    <Compile Include="NavigatingTopMenuItems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="OrderedTest1.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
+    <None Include="TestConfiguration.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BG.Selenium.Framework\BG.Selenium.Framework.csproj">

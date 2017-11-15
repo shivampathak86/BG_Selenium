@@ -32,6 +32,7 @@ namespace BG.Selenium.Framework
            
           
             return new LoginPage();
+            
 
         }
 
@@ -46,10 +47,12 @@ namespace BG.Selenium.Framework
             //var btn = Driver.instance.FindElement(By.Id("btnSubmit"));
             //btn.Click();
 
+            
             Username.SendKeys(username);
             Password.SendKeys(password);
             SubmitBtn.Click();
             return this; 
+
 
         }
 

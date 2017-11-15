@@ -32,8 +32,11 @@ namespace BG.Selenium.Framework
         [FindsBy(How = How.Name, Using = "btnSubmit")]
         public IWebElement SearchInventoryBtn { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//a[contains(text(),'book')]")]
+        public IWebElement BookTopNav { get; set; }
 
 
+       
         public  HomePage SelectPointype()
         {
             if (PoinTypeRadioButton != null)
@@ -48,11 +51,17 @@ namespace BG.Selenium.Framework
                 }
             }
             return this;
-        }
+           
+            
+            
+                
+            }
+        
 
         public HomePage SelectDestination()
-        {
+        {                   
             var selectdestination = new SelectElement(selectedDestination);
+            
             selectdestination.SelectByText("Peoria");
             CapturingAction.CaptureElement(selectedDestination);
 
@@ -110,10 +119,44 @@ namespace BG.Selenium.Framework
             }
             
         }
-
-
-        public SearchResultPage ClickOnSearchButton()
+        //public HomePage bookTopNav
+        //{
+        //    get
+        //    {
+        //        var bookMenu = new Actions(Driver.DriverInstance).MoveToElement(BookTopNav).Build();
+        //        //foreach (IWebElement topnavtabs in HomePageTopNavlinks)
+        //        //{
+        //        //    string bookmenu = topnavtabs.Text;
+        //        //    if (bookmenu.Equals("book", StringComparison.CurrentCultureIgnoreCase))
+        //        //        { BooktopNav = topnavtabs; }
+        //        return this;
+        //    }
+        //}
+        public HomePage SelectMenuUnderBookTopNav()
         {
+            IWebElement subMenus = null;
+            
+             new Actions(Driver.DriverInstance).MoveToElement(Driver.DriverInstance.FindElement(By.XPath("//a[contains(text(),'book')]"))).Click().Perform();
+
+            IList<IWebElement> BookTopNav_menus = BookTopNav.FindElements(By.TagName("li"));
+            foreach (IWebElement sub_menu in BookTopNav_menus)
+            {
+                if (sub_menu.Text.Equals("bluegreen resorts", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    subMenus = sub_menu;
+                    var SelectingPointsMenu = new Actions(Driver.DriverInstance);
+                    SelectingPointsMenu.MoveToElement(subMenus).Build().Perform();
+                }
+            }
+            {
+
+            }
+
+            return this;
+        }
+        public SearchResultPage ClickOnSearchButton()
+        { 
+
             SearchInventoryBtn.Click();
             return  new SearchResultPage();
         }

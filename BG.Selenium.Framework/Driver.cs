@@ -23,7 +23,7 @@ namespace BG.Selenium.Framework
         //    }
         //}
 
-        public static void CleanUp() => DriverInstance.Close();
+        public static void CleanUp() => DriverInstance.Quit();
    }
 
 }

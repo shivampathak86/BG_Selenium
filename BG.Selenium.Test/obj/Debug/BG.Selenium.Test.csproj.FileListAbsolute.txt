@@ -16,3 +16,4 @@ C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Te
 C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Test\obj\Debug\BG.Selenium.Test.csproj.CoreCompileInputs.cache
 C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Test\obj\Debug\BG.Selenium.Test.dll
 C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Test\obj\Debug\BG.Selenium.Test.pdb
+C:\Users\patha\Documents\WorkSpace\GitHub\Selenium\BG\BG_Selenium\BG.Selenium.Test\bin\Debug\OrderedTest1.orderedtest

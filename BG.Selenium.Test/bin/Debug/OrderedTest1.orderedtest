@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="orderedtest1" storage="c:\users\patha\documents\workspace\github\selenium\bg\bg_selenium\bg.selenium.test\orderedtest1.orderedtest" id="4a751ea7-222f-49b4-9cba-24d518c0c825" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="5b8a2dd4-39ba-d68f-3c2a-e0fbe4f0b401" name="Can_User_Reach_To_Search_Result_Page" storage="bin\debug\bg.selenium.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="6c272234-d987-0b8f-10fe-0bbeec880565" name="Can_User_Select_Resort" storage="bin\debug\bg.selenium.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

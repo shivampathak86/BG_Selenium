@@ -18,16 +18,18 @@ namespace BG.Selenium.Test
         public static void Initialize(TestContext testcontext)
         {
             Driver.Initialize();
+            
         }
+        
         [TestMethod]
-
+       
         public void Can_User_Reach_To_Search_Result_Page()
         {
 
             LoginPage.Goto();
-            Pages.Loginpage.Login("775699@bxgcorp.com","hut44#");
+            Pages.Loginpage.Login("775699@bxgcorp.com", "hut44#").WithVacationClub(); ;
             
-            Pages.Loginpage.WithVacationClub();// Login with ownerType
+            //Pages.Loginpage.WithVacationClub();// Login with ownerType
 
             
              /* Select PointType 
@@ -48,18 +50,13 @@ namespace BG.Selenium.Test
         {
 
 
-           Assert.IsTrue(Pages.ResultPage.CheckAvailablePoints().UserReachedToConfirmResvPage(),"Test Failed");
+           Assert.IsTrue(Pages.ResultPage.ClickOnBookNowbtn().UserReachedToConfirmResvPage(),"Test Failed");
         }
 
-        [DeploymentItem("")]
-        [DataSource("", "", "", DataAccessMethod.Sequential), TestMethod]
-        public void Test(TestContext testContext)
-        {
-            var rows = testContext.DataRow["0"];
+       
+            
 
-            DataTableCollection
-
-        }
+        
         [ClassCleanup]
         public static void CleanUp()
         {

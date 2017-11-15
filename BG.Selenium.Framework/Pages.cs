@@ -41,7 +41,15 @@ namespace BG.Selenium.Framework
                     return resultPage;
                 }
             }
-
+      public static HomePage HomePage
+        {
+            get
+            { 
+                var homePage = new HomePage();
+                PageFactory.InitElements(Driver.DriverInstance, homePage);
+                return homePage;
+            }
+        }
 
         
     }
