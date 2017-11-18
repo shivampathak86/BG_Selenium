@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BG.Selenium.Framework", "BG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BG.Selenium.Test", "BG.Selenium.Test\BG.Selenium.Test.csproj", "{90F30FE8-09F7-470C-BD66-0256BBA28BEE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Executables", "Executables", "{B44B9B35-9FA6-478A-9AE8-4E45E2A9048C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
