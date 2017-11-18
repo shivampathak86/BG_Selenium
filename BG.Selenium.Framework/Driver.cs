@@ -1,16 +1,20 @@
 ﻿using System.Collections.Generic;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
-
+using System;
 
 namespace BG.Selenium.Framework
 {
     public class Driver
     {
+
+        public static IWebDriver DriverInstance;
         
-        public  static IWebDriver DriverInstance;
- 
-        public static void Initialize() => DriverInstance = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(@"C:\drivers"));
+        public static void Initialize()
+        {
+            System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", @"C:\drivers\geckodriver.exe");
+            DriverInstance = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(@"C:\drivers"));
+        }
 
 
         //public static void SwitchingWindows()
@@ -23,7 +27,12 @@ namespace BG.Selenium.Framework
         //    }
         //}
 
-        public static void CleanUp() => DriverInstance.Quit();
-   }
+        public static void CleanUp()
+        {
 
+            //System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", @"C:\drivers");
+            DriverInstance.Quit();
+        }
+
+    }
 }

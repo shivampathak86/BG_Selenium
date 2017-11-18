@@ -8,6 +8,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.Events;
 
 namespace BG.Selenium.Framework
 {
@@ -150,13 +151,20 @@ namespace BG.Selenium.Framework
             }
             {
 
+
             }
 
             return this;
         }
         public SearchResultPage ClickOnSearchButton()
-        { 
+        {
+            //var ev = new EventFiringWebDriver(Driver.DriverInstance); 
 
+            IAlert a= Driver.DriverInstance.SwitchTo().Alert();
+            a.Accept();
+            a.Dismiss();
+            a.SendKeys("A");
+              
             SearchInventoryBtn.Click();
             return  new SearchResultPage();
         }
